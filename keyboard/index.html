@@ -4,119 +4,188 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML + CSS + JS</title>
-    <link rel="stylesheet" href="styles.css" />
     <style>
-      body{
+      body {
         background-color: rgb(16, 14, 12);
+        font-family: Arial, sans-serif;
       }
-#container{
-  display:grid;
-  grid-template-columns: repeat(14,1fr);
-  grid-template-rows: repeat(5,1fr);
-  gap:20px;
-  box-shadow: grey;
-  background-color: rgb(164, 159, 159);
-  padding:40px;
-  margin:auto;
-  width:70%;
-  border-radius: 20px;
-  margin-top: 230px;
-  }
-  #container > div{
-    background-color:black;
-    display:flex;
-    justify-content: center;
-align-items: center;
-font-weight: bold;
-font-size: 20px;
-border-radius: 10px;
-color: white;
 
+      #inputBox {
+        display: block;
+        margin: 100px auto 20px auto;
+        width: 70%;
+        padding: 15px;
+        font-size: 24px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 0 10px gray;
+      }
 
-  }
-  #container>div:hover{
-    cursor:pointer;
-    background-color: purple;
-  }
-  #space{
-    grid-column: span 5;
-  }
-  #shift{
-    grid-column: span 2;
-  }
-  #enter{
-    grid-column: span 2;
-  }
-  #shift1{
-    grid-column: span 2;
-  }
+      #container {
+        display: grid;
+        grid-template-columns: repeat(14, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 20px;
+        background-color: rgb(164, 159, 159);
+        padding: 40px;
+        margin: auto;
+        width: 70%;
+        border-radius: 20px;
+        margin-top: 30px;
+      }
+
+      #container > div {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 10px;
+        color: white;
+        height: 50px;
+        user-select: none;
+      }
+
+      #container > div:hover {
+        cursor: pointer;
+        background-color: purple;
+      }
+
+      #container > div.active {
+        background-color: orange !important;
+      }
+
+      #space {
+        grid-column: span 5;
+      }
+
+      #shift {
+        grid-column: span 2;
+      }
+
+      #enter {
+        grid-column: span 2;
+      }
+
+      #shift1 {
+        grid-column: span 2;
+      }
     </style>
   </head>
   <body>
+    <input type="text" id="inputBox" placeholder="Type using virtual keyboard..." readonly />
+
     <div id="container">
-    <div>~</div>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-    <div>0</div>
-    <div>-</div>
-    <div>+</div>
-    <div>backspace</div>
-    <div>tab</div>
-    <div>Q</div>
-    <div>W</div>
-    <div>E</div>
-    <div>R</div>
-    <div>T</div>
-    <div>Y</div>
-    <DIV>U</DIV>
-    <div>I</div>
-    <DIV>O</DIV>
-    <DIV>P</DIV>
-    <DIV>[</DIV>
-    <DIV>]</DIV>
-    <DIV>\</DIV>
-    <DIV>CAPSLOCK</DIV>
-    <DIV>A</DIV>
-    <DIV>S</DIV>
-    <DIV>D</DIV>
-    <DIV>F</DIV>
-    <DIV>G</DIV>
-    <DIV>H</DIV>
-    <DIV>J</DIV>
-    <DIV>K</DIV>
-    <DIV>L</DIV>
-    <DIV>;</DIV>
-    <DIV>'</DIV>
-    <DIV id="enter">ENTER
-    </DIV>
-   
-     <DIV id="shift1">SHIFT</DIV>
-    <DIV>Z</DIV>
-    <DIV>X</DIV>
-    <DIV>C</DIV>
-    <DIV>V</DIV>
-    <DIV>B</DIV>
-    <DIV>N</DIV>
-    <DIV>M</DIV>
-    <DIV>,</DIV>
-    <DIV>.</DIV>
-    <DIV>/</DIV>
-    <DIV id="shift">shift</DIV>
-    <DIV>ctrl</DIV>
-    <DIV>fn</DIV>
-    <DIV>win</DIV>
-    <DIV>alt</DIV>
-    <DIV id="space">space</DIV>
-    <DIV>alt</DIV>
-    <DIV>ctrl</DIV>
-    <DIV>option</DIV>
-  </div>
-  </bodY>
-</html> 
+      <div>~</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>0</div>
+      <div>-</div>
+      <div>+</div>
+      <div>backspace</div>
+      <div>tab</div>
+      <div>Q</div>
+      <div>W</div>
+      <div>E</div>
+      <div>R</div>
+      <div>T</div>
+      <div>Y</div>
+      <div>U</div>
+      <div>I</div>
+      <div>O</div>
+      <div>P</div>
+      <div>[</div>
+      <div>]</div>
+      <div>\</div>
+      <div>CAPSLOCK</div>
+      <div>A</div>
+      <div>S</div>
+      <div>D</div>
+      <div>F</div>
+      <div>G</div>
+      <div>H</div>
+      <div>J</div>
+      <div>K</div>
+      <div>L</div>
+      <div>;</div>
+      <div>'</div>
+      <div id="enter">ENTER</div>
+      <div id="shift1">SHIFT</div>
+      <div>Z</div>
+      <div>X</div>
+      <div>C</div>
+      <div>V</div>
+      <div>B</div>
+      <div>N</div>
+      <div>M</div>
+      <div>,</div>
+      <div>.</div>
+      <div>/</div>
+      <div id="shift">shift</div>
+      <div>ctrl</div>
+      <div>fn</div>
+      <div>win</div>
+      <div>alt</div>
+      <div id="space">space</div>
+      <div>alt</div>
+      <div>ctrl</div>
+      <div>option</div>
+    </div>
+
+    <script>
+      const keys = document.querySelectorAll("#container > div");
+      const input = document.getElementById("inputBox");
+
+      keys.forEach((key) => {
+        key.addEventListener("click", () => {
+          const val = key.textContent.trim();
+
+          if (val === "backspace") {
+            input.value = input.value.slice(0, -1);
+          } else if (val === "space") {
+            input.value += " ";
+          } else if (val === "ENTER") {
+            input.value += "\n";
+          } else if (
+            val === "SHIFT" ||
+            val === "shift" ||
+            val === "ctrl" ||
+            val === "alt" ||
+            val === "win" ||
+            val === "fn" ||
+            val === "option" ||
+            val === "CAPSLOCK" ||
+            val === "tab"
+          ) {
+            // Do nothing or simulate shift later
+          } else {
+            input.value += val;
+          }
+        });
+      });
+
+      // Optional: Show key press highlight when using physical keyboard
+      document.addEventListener("keydown", (e) => {
+        keys.forEach((k) => {
+          if (
+            k.textContent.trim().toLowerCase() === e.key.toLowerCase() ||
+            (e.key === " " && k.textContent.trim().toLowerCase() === "space") ||
+            (e.key === "Enter" && k.textContent.trim().toLowerCase() === "enter") ||
+            (e.key === "Backspace" && k.textContent.trim().toLowerCase() === "backspace")
+          ) {
+            k.classList.add("active");
+            setTimeout(() => k.classList.remove("active"), 200);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
